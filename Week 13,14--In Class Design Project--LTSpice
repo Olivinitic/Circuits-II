@@ -1,0 +1,31 @@
+Week 13,14: In Class Design Project: LTSpice
+
+
+Process Variations
+====================================================================
+	a.k.a Process Corners
+	
+	Designer must simulatie over all process corners with different sets of SPICE parameters
+	
+	Must meet all SPEC's over all corners (military, consumer, automotive, etc)
+
+	1. Fast Nmos and Fast Pmos
+	2. Slow Nmos and Slow Pmos
+	3. Fast Nmos
+	4. Slow Nmos
+
+	5. High Temperatures		
+	6. Low Temperatures
+
+	7. High Vdd / Low Vdd
+	8. High Cap. / Low Cap.
+
+
+	Choose each to ensure that it works over all
+
+		Total Combinations == 32 Process Corners!
+
+		Industrial Assignment
+
+LTSpice -- Part 1
+	
