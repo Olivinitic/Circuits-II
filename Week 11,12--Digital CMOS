@@ -11,6 +11,67 @@ Week 11,12--Digital CMOS
 
 1. CMOS Digital Logic Circuits
 ====================================================================
+	CMOS is the most dominant circuitry today (almost all IC)
+		- Noise Immune
+		- Built with Low Power
+		- High level of Integration
+
+	Analog circuitry will still always exist
+		- Everything is analog in nature
+		- Making Analog signals into Digital
+			-- PreAmplifier: (op amp) Analog Circuit, amplifies analog signal
+			-- Digitize Signal: Analog Circuit, Analog to Digital Converter
+
+	Chapter Overview:
+		- Operation of the Logic Inverter: the basic element in digital circuits
+			-- Characterized by parameters:
+				1. Noise Margins
+				2. Propagation Delay
+				3. Power Dissipation
+			-- Implement using 1 of 3 possible arrangements of voltage-controlled switches (transistors).
+		- The three most significant metrics/ requirements in Digital IC design are:
+			1. Speed
+			2. Power Dissipation
+			3. Area
+		- Why CMOS has become the dominant technology
+		- CMOS Inverter: structure, circuit operation, static and dynamic performance analysis, and design
+		- Optimization of CMOS logic circuits
+		- Moore's Law
+
+	13.1 Digital Logic Inverters
+		- The most basic element in digital circuit design
+		- Same role as the Amplifier in analog circuits
+		- 13.1.1 Function of the Inverter
+			-- Convert 0 to 1, 1 to 0
+		- 13.1.2 Voltage Transfer Characteristics (VTC)
+			-- Noise Margins (Regions immune to Noise)
+				1. V_iL: The maximum value Vi can have to be logic 0
+				2. V_iH: The minimum value Vi can have to be logic 1
+				**REMEMBER:
+					-- Four parameters: (V_OH, V_OL, V_IH, V_IL)
+					-- How to determine Noise Margins from transfer characteristic curve
+					-- Inverter is good at rejecting noise
+		- Ratio'd Logic dissipates DC power
+			-- Consumes too much power
+			-- Death of Bi polar machines
+			-- Not as good noise margins
+			-- DC/Static Dissipation
+		- CMOS as Inverter
+			-- Intrinsic low power technology
+			-- Only has Dynamic Power Dissipation (to first order)
+				** Consumes power only when charging and discharging
+			-- Based off how the MOS transistors interact.
+				** Complementary Pull-Up Switch (PU) - when Vi is low, PU is closed (PMOS)
+				** Complementary Pull-Down Switch (PD) - When Vi is low, PD is open (NMOS)
+			-- CMOS is king
+
+
+		- Can be built in different ways other than CMOS
+			-- First example in notes: CS NMOS Amplifier
+
+		
+
+
 
 2. Power Dissipation
 ====================================================================
