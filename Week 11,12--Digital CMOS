@@ -1,16 +1,32 @@
 *******************************************************************
 Week 11,12--Digital CMOS
-	Overview:
+	Lectures Overview:
 		1. CMOS Digital Logic Circuits
 		2. Power Dissipation
 		3. The CMOS Inverter
 		4. Propagation Delay
 		5. CMOS Logic-Gate Circuits
+
+	Chapter Overview:
+		- Operation of the Logic Inverter: the basic element in digital circuits
+			-- Characterized by parameters:
+				1. Noise Margins
+				2. Propagation Delay
+				3. Power Dissipation
+			-- Implemented using 1 of 3 possible arrangements of voltage-controlled switches (transistors) - Common Source.
+		- The three most significant metrics/ requirements in Digital IC design are:
+			1. Speed
+			2. Power Dissipation
+			3. Area
+		- Why CMOS has become the dominant technology
+		- CMOS Inverter: structure, circuit operation, static and dynamic performance analysis, and design
+		- Optimization of CMOS logic circuits
+		- Moore's Law
 *******************************************************************
 
 
 1. CMOS Digital Logic Circuits
-====================================================================
+===================================================================
 	CMOS is the most dominant circuitry today (almost all IC)
 		- Noise Immune
 		- Built with Low Power
@@ -21,22 +37,6 @@ Week 11,12--Digital CMOS
 		- Making Analog signals into Digital
 			-- PreAmplifier: (op amp) Analog Circuit, amplifies analog signal
 			-- Digitize Signal: Analog Circuit, Analog to Digital Converter
-
-	Chapter Overview:
-		- Operation of the Logic Inverter: the basic element in digital circuits
-			-- Characterized by parameters:
-				1. Noise Margins
-				2. Propagation Delay
-				3. Power Dissipation
-			-- Implement using 1 of 3 possible arrangements of voltage-controlled switches (transistors).
-		- The three most significant metrics/ requirements in Digital IC design are:
-			1. Speed
-			2. Power Dissipation
-			3. Area
-		- Why CMOS has become the dominant technology
-		- CMOS Inverter: structure, circuit operation, static and dynamic performance analysis, and design
-		- Optimization of CMOS logic circuits
-		- Moore's Law
 
 	13.1 Digital Logic Inverters
 		- The most basic element in digital circuit design
@@ -65,22 +65,162 @@ Week 11,12--Digital CMOS
 				** Complementary Pull-Down Switch (PD) - When Vi is low, PD is open (NMOS)
 			-- CMOS is king
 
-
 		- Can be built in different ways other than CMOS
-			-- First example in notes: CS NMOS Amplifier
-
-		
-
+			-- Ratio'd Inverter (one NMOS transistor)
+				** [Figure in Notes]
+			-- CMOS Inverter (PMOS and NMOS with gates tied to Vin)
+				** [Figure in Notes]
+			-- ECL (Emitter Coupled Logic): 
+				** Bipolar Junction Technology. 
+				** High Power, but 
+				** High Speed
+				** [Figure in Notes]
 
 
 2. Power Dissipation
-====================================================================
+===================================================================
+	Overview:
+		- CMOS is LOW POWER Technology
+			-- This is what makes it the dominant technology
+		- Very-Large-Scale Integration (VLSI)
+			-- Describes methods to design and implement [Very Compact] integrated chips.
+				** More than [1 Million] per chip
+		- Static Power Dissipation
+			-- Power lost when switch is open/ closed (not moving)
+		- Dynamic Power Dissipation
+			-- Power lost when switch is opening/ closing (moving)
+		
+	Equations:
+		- Power dissipation is calculated by:
+			-- Pdynamic = C(Vdd)^2f
+				** Derived by adding the Energy Dissipated during both the charge and discharge of the capacitor.
+				** Charging: 1/2 the energy drawn is dissipated through Rp, and 1/2 is stored to the capacitor.
+				** Discharging: the Stored Energy on the capacitor (the other half of original energy drawn) is dissipated through Rn.
+
+		- To minimize dynamic power dissipation:
+			-- Capacitance should be minimal
+				** Shortens the length of transients
+			-- Vdd should be minimal
+				** This is why modern devices use 5V supplies, as opposed to 12 or 15V
+			-- Although Frequency Can be reduced, we want to increase the speed in digital technology
+
+	Lecture Notes:
+		- Where does the Load Capacitance come from?
+			1. Gate Capacitance of subsequent stages (Cascading Inputs)
+				-- Or, The capacitance needed at Vo to drive other circuits.
+				-- Implied/Instrinsic.
+				-- Add all the Capacitances in Parallel.
+			2. Wire Capacitance
+				-- Minimize
+			3. Parasitic Capacitance at drains
+				-- Minimize
 
 3. The CMOS Inverter
-====================================================================
+===================================================================
+	Lecture Notes:
+		- The NMOS and PMOS will Never be both On at the same time
+			-- No DC path from Vdd to Ground  
+			-- Only power dissipated is the transient power when charging/ discharging
+				** Dynamic Power
+		- Review [Figure 13.18 & 13.19]:
+			-- Operations of the CMOS inverter (current vs Vo).
+		- Review [Figure 13.20]: 
+			-- Voltage-Transfer Characteristic of a CMOS when Qn and Qp are matched
+			-- Regions of the transfer curve are used to determine operating regions of transistors and set up equations
+				** Useful when the transistor parameters are not equal (Kp' != Kn', etc.)
+		- Review [Equations on Pg 4]: 
+			-- NMOS and PMOS in an Inverter.
+			-- Linear and Saturation Current of devices as functions of Vi.
+		- Review [Figure 13.6]
+			-- Digital IC Technologies and Logic-Circuit Families.
+		
+
+		- Why is CMOS King?
+			-- CMOS dissipate [less power]
+			-- MOS transistors offer [higher input impedance]
+			-- The size of MOS transistors has been reduced drastically in recent past, more so than bipolar technologies.
 
 4. Propagation Delay
-====================================================================
+===================================================================
+	Lecture Notes:
+		- Propagation Delays:
+			-- The Time difference between a change in input and reaction at output.
+			-- Should be obtained by inspection, including the waveforms.
+			-- More specifically, the 50% point to the 50% point (50% of input to 50% of output)
+			-- [Figure 13.13] is a visual of ideal definition
+			-- [Figure 13.15] is a visual of practical definition
+		- Time Propagation (tPHL and tPLH)
+			-- Propagation time from high-low and low-high
+		- Rise Time/ Fall Time
+			-- 10% - 90%, and vice versa
+
+		- [Figure 13.23] Equivalent circuits for determining the propagation delays
+			-- Break down the CMOS operation to two parts, tPHL and tPLH
+			-- Use knowledge of single time constant circuits to:
+				** determine the time propagation and 
+				** construct the Vo and current waveforms.
+			-- Rn and Rp are not linear in real circuits!!
+				** But, they are good approximations
+			-- How do we find Rn and Rp?
+				** For a Specific technology
+					1. Measure Vo(t) for an inverter in lab
+						-- Fit curve to [Vo = Vdd*e^(-t/RnC)]
+						-- Pick Rn and remeasure for best fit
+						-- Rn scales for other NMOS sizes!!
+							** Rn prop= (L/W)
+					2. Simulate inverter w/ SPICE
+						-- Fit Rn to the Vo curve after applying Vi
+					3. Analytical Estimate
+						-- Rn and Rp are proportionate to these variables
+						-- tP prop= (Cl*Vdd)/Iaverage
+							-> Isat = (1/2)u*Cox*(W/L)(Vdd-Vt)^2
+							-> Ilin = uCox(W/L)(Vdd-Vt)(Vdd/2)-...
+						-- Very roughly: I prop= u*Cox(W/L)Vdd^2
+						-- tP prop = Cl/(u*Cox(W/L)Vdd)
+			-- How do we Minimize Propagation Delay
+				1. Decrease capacitance to drive
+				2. Increase the mobility and oxide Capacitance
+				3. Increase the Width and decrease the Length
+				4. Larger Vdd
+			-- When does sizing matter
+				** Scaling the input to larger gates to drive a large load capacitance
+				** "Scaling Theory"
+
+		- Summary:
+			-- Equations 13.64 through (13.68) in textbook yield several observations:
+				** Using [Larger (W/L) ratios] can result in lower tP
+				** A [larger supply voltage Vdd] results in lower tP
+			-- These observations demonstrate the ["trade-offs"] associated with design of digital logic gates.
+
 
 5. CMOS Logic-Gate Circuits
-====================================================================
+===================================================================
+	Overview:
+		- Using digital CMOS to build other digital logic gates besides inverters
+		- Mostly all integrated circuits sold are digital CMOS
+			-- 85% - 90%
+			-- Bulk of Signal Processing
+		- Analog CMOS are mainly "niche technologies"
+			-- Def: Products designed for a small part of the technology market
+			-- Will never go away, the world is Analog in Nature.
+
+	Lecture Notes:
+		- CMOS Logic Gate is extension of Inverter
+			-- NMOS [pull-down] transistor/ network
+			-- PMOS [pull-up] transistor/ network
+			-- The Logic is defined by a single network path
+				** Both paths are never on at the Same time
+				** = Low Power
+		- These two networks are operated by input variables in a [complementary fashion]
+			-- Networks are complementary
+			-- Solve one network, and implement the other network by using the complementary or parallel logic
+				** Switch inputs that are in:
+					Parallel -> Series
+					Series -> Parallel
+		- The CMOS Logic Gates work readily up to 4 inputs
+			-- More than 4, begins to slow down
+		- To design an arbitrary Gate
+			-- Create Truth Table
+			-- Create Karnaugh Map
+			-- Determine the Equation for one network
+			-- Complement network to create the other network
