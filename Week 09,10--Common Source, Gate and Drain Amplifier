@@ -1,70 +1,116 @@
 *******************************************************************
 Week 9,10--Common Source, Gate and Drain Amplifiers
-	Overview:
-		3 Basic Amplifiers
-		Common Source Amplifier
-		Common Source Amplifier/PMOS
-		Common Source Amplifier 2
-		Common Source Amplifier- Source Resistance
-		Common Drain Amplifier
-		Common Drain Amplifier 2
-		Common Drain Amplifier 3
-		Common Gate Amplifier
-		Common Gate Amplifier 2
-		Discrete MOSFET Amp
-		Discrete Common Gate MOS Amp
-		Integrated Common Source MOS Amp
+	Lectures Overview:
+		1. 3 Basic Amplifiers
+		2. Common Source Amplifier
+		3. Common Source Amplifier/PMOS
+		4. Common Source Amplifier 2
+		5. Common Source Amplifier- Source Resistance
+		6. Common Drain Amplifier
+		7. Common Drain Amplifier 2
+		8. Common Drain Amplifier 3
+		9. Common Gate Amplifier
+		10. Common Gate Amplifier 2
+		11. Discrete MOSFET Amp
+		12. Discrete Common Gate MOS Amp
+		13. Integrated Common Source MOS Amp
+
+	Chapter Overview:
+		- Build Small Signal amplifiers using field effect transistors
 *******************************************************************
 
 
-3 Basic Amplifiers
+1. 3 Basic Amplifiers
+====================================================================
+	Lecture Notes:
+		- 3 Basic Amplifier Configurations
+			1. Common Source Amplifier
+			2. Common Drain Amplifier (Source Follower)
+			3. Common Gate Amplifier
+
+		- Small signal anaylsis
+			-- Kill Independent Sources
+
+2. Common Source Amplifier
+====================================================================
+	Lecture Notes:
+		- Steps to solve for small signal:
+			1. Solve for DC Bias Point
+			2. Solve for small signal parameters of FET
+				-- Transconductance (g_m)
+				-- Rds
+			3. Replace FET with small signal model
+			   	-- Kill Independet Sources
+			   		** Short Independent Voltage Sources
+			   		** Cut Independent Current Sources
+			4. Apply Small Signal Analysis to remaining circuit	to find:
+			   	1. Samll Signal Voltage Gain
+			   	2. Small Signal Current Gain
+			   	3. Samll Signal Output Resistance
+			   	4. Samll Signal Input Resistance
+
+			   	-- Small Signal Voltage gain
+			   		** g_m = (2Id)/Vov
+					** Av = (Vo)/Vin = -(g_m)/(g_ds + Gload)
+					b/c
+					** g_m*(Vin) + g_ds*(Vin - 0) + Gload*(Vo - 0) = 0
+					** To increase gain, descrease size of g_ds.
+					** MOSFET characteristics with flat saturation from Id vs Vds have small g_ds
+				-- Small Signal Current gain
+					** since we are at low frequencies and no capacitance (open at low f), the input current Iin = 0.
+					** Ai = Id/Iin = Id/0 = infinity
+				-- Small Signal Rout
+					** Rout = (Vt/It) = 1/(g_ds + Gload)
+					b/c
+					** It = (Vt - 0)*g_ds + (Vt - 0)*Gload
+				-- Small Signal Rin
+					** Rin = (Vt/It) = (Vt/0) = infinity
+					b/c
+					** It = 0
+
+		- Analog devices 
+
+
+3. Common Source Amplifier/PMOS
 ====================================================================
 
 
-Common Source Amplifier
+4. Common Source Amplifier 2
 ====================================================================
 
 
-Common Source Amplifier/PMOS
+5. Common Source Amplifier- Source Resistance
 ====================================================================
 
 
-Common Source Amplifier 2
+6. Common Drain Amplifier
 ====================================================================
 
 
-Common Source Amplifier- Source Resistance
+7. Common Drain Amplifier 2
 ====================================================================
 
 
-Common Drain Amplifier
+8. Common Drain Amplifier 3
 ====================================================================
 
 
-Common Drain Amplifier 2
+9. Common Gate Amplifier
 ====================================================================
 
 
-Common Drain Amplifier 3
+10. Common Gate Amplifier 2
 ====================================================================
 
 
-Common Gate Amplifier
+11. Discrete MOSFET Amp
 ====================================================================
 
 
-Common Gate Amplifier 2
+12. Discrete Common Gate MOS Amp
 ====================================================================
 
 
-Discrete MOSFET Amp
-====================================================================
-
-
-Discrete Common Gate MOS Amp
-====================================================================
-
-
-Integrated Common Source MOS Amp
+13. Integrated Common Source MOS Amp
 ====================================================================
 
