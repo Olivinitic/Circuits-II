@@ -17,6 +17,17 @@ Week 9,10--Common Source, Gate and Drain Amplifiers
 
 	Chapter Overview:
 		- Build Small Signal amplifiers using field effect transistors
+		- Analyze amplifiers in Discrete circuits and integrated circuits
+			-- Discrete: single transistor with biasing resistors
+				** Resistors are difficult to fabricate on IC, take up a lot of area (more dye needed)
+			-- Integrated: multiple transistors, one amplifying and others biasing
+				** Biased usually with 1:1 current mirror
+
+		- Small Signal Model
+			-- g_m * (ACgateVoltage - ACsourceVoltage)
+
+
+
 *******************************************************************
 
 
@@ -50,6 +61,7 @@ Week 9,10--Common Source, Gate and Drain Amplifiers
 			   	4. Samll Signal Input Resistance
 
 			   	-- Small Signal Voltage gain
+			   		** Find the gain by summing the currents at the output node
 			   		** g_m = (2Id)/Vov
 					** Av = (Vo)/Vin = -(g_m)/(g_ds + Gload)
 					b/c
@@ -68,36 +80,72 @@ Week 9,10--Common Source, Gate and Drain Amplifiers
 					b/c
 					** It = 0
 
-		- Analog devices 
-
-
 3. Common Source Amplifier/PMOS
 ====================================================================
-
+	Lecture Notes
+		- Voltage Gain
+			-- Sum the currents at the output node
+			-- The gain equation is the same as NMOS, with an additional Gload
+		- Current Gain
+			--  
 
 4. Common Source Amplifier 2
 ====================================================================
+	Lecture Notes: 
+		- Steps for solving Common Source Amplifier with multiple transistors
+			1. Solve DC operating Point, or Q
+			2. Calculate Small Signall Parameters
+			3. 'Kill' Independent Sources
 
-
-5. Common Source Amplifier- Source Resistance
+5. Common Source Amplifier - Source Resistance
 ====================================================================
+	Lecture Notes:
+		- Rs = Source Degeneration Resistance
+			-- Provides Negative Feedback
+				** If you try to raise the current, then vs increases, which decreases vin-vs, which turns off resistor, and lowers the current.
+			-- Why do we want a negative feedback?
+				** Reduction in gain
+				** Increases Bandwidth (bigger frequencies)
+				** More stable, predictable gain
+				** More Linearity
 
 
-6. Common Drain Amplifier
+
+6. Common Drain Amplifier (Source Follower)
 ====================================================================
+	Lecture Notes:
+		- The Drain has no small signal variation
+			-- Fixed DC potential
+		- No Voltage Gain (Unity Voltage Gain)
+			-- Used as a buffer
+			-- 
+		- When Calculating Small Signal Effects
+			-- g_m >> g_ds 	always
+			-- g_m > Gload 	usually
+
+		- Rout
+			-- When looking into source of FET
+				** Rin ~= 1/(g_m)
+				** Small Resistance (useful to match source impedence)
 
 
-7. Common Drain Amplifier 2
+7. Common Drain Amplifier 2 (PMOS)
 ====================================================================
-
+	Lecture Notes:
+		- Same Results as from NMOS
+		- Structure is just backwards
 
 8. Common Drain Amplifier 3
 ====================================================================
-
+	Lecture Notes:
+		- Common Drain Amplifier on a fabricated IC
+			-- Biased with other transistors
+			-- All PMOS in this example
 
 9. Common Gate Amplifier
 ====================================================================
-
+	Lecture Notes:
+		- 
 
 10. Common Gate Amplifier 2
 ====================================================================
