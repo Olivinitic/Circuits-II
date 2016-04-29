@@ -10,17 +10,29 @@ Week 3,4--Diodes
 		7. Rectifier Circuits
 		8. The Rectifier with a Filter Capacitor
 		9. The Rectifier with a Filter Capacitor, Pt 2
+
+		- Diodes uses
+			-- Voltage Shifting
+			-- ESD
 *******************************************************************
 
 
 1. Diodes
 ====================================================================
+	My Memory:
+		- Diodes
+			-- Forward Bias: Allow current to flow in one direction
+				** Vd = 0.7V
+			-- Reverse Bias: 
 
 2. More Diodes
 ====================================================================
 
 3. Terminal Characteristics of Junction Diodes
 ====================================================================
+	My Memory:
+		- Constant Voltage Drop Model
+			-- V = 0.7V
 
 4. Modeling the Diode: Forward Characteristics
 ====================================================================
@@ -30,12 +42,67 @@ Week 3,4--Diodes
 
 6. Small-Signal Model
 ====================================================================
+	Lecture Notes:
+		- Diode is modeled as [Variable Resistor]
+		- Linearitation of exponential model is needed to get value
+		- Around Bias Point defined by contant voltage drop
+			-- Vd = 0.7 V 
+
+		- Steps to solve
+			1. Solve for the DC Operating point
+				-- use the constant voltage drop model to calculate for current
+				-- Exponential Curve
+			2. Replace with Small Signal model and solve for the Resistance
+				-- r_d = Vt/Id
+				b/c
+				-- 1/r_d = dId/dVt
+			3. Solve for Voltage across element 
+
 
 7. Rectifier Circuits
 ====================================================================
+	Lecture Notes:
+		- Diodes are good for rectifying DC Sources
+		- Steps:
+			1. Increase/ Decrease rms magnitude of AC wave via power transformer
+			2. Conververt full-wave AC to hald-wave DC (still time varying)
+			3. Employ low-pass filter to reduce wave amplitude by > 90%
+			4. Employ voltage regulator to eliminate ripple
+			5. supply dc load
+
+		- Questions to ask:
+			-- Current-handling capability - what is maximum forward current diode is expected to conduct?
+				** Id =  
+			-- Peak Inverse Voltage (PIV) - what is maximum reverse voltage it is expected to block w/o breakdown?
 
 8. The Rectifier with a Filter Capacitor
 ====================================================================
+	Lecture Notes:
+		- A Filter is simply a Capacitor
+		- Load Resistance
+			-- Draws Power (Appliance)
+
 
 9. The Rectifier with a Filter Capacitor, Pt 2
 ====================================================================
+	Lecture Notes:
+		- Precision Rectifier
+			-- alows for rectification for low voltage signals 
+				**  (below 0.7V)
+		- Limiter Circuit
+			-- One which limits voltage output
+			-- Soft vs Hard Limiter
+			-- Applied in:
+				** Signal Processing, to prevent breakdown of transistors
+			-- Circuit types
+				** Single limiters
+					-- One Diode
+				** Double Limiters
+					-- two opposite diodes
+				** Linear Range
+					-- Diodes and Sources can change the linear range
+				** Zener Diodes
+					-- Soft Limiting
+					-- Designed to operate in the breakdown region
+						** Two Opposite Zener Diodes in series
+						** Clamp at the value the Zener was designed at 

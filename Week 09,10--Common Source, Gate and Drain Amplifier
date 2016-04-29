@@ -26,7 +26,21 @@ Week 9,10--Common Source, Gate and Drain Amplifiers
 		- Small Signal Model
 			-- g_m * (ACgateVoltage - ACsourceVoltage)
 
-
+		- Common Source
+			-- Big voltage gain
+			-- Infinite Current Gain
+			-- Infinite Input Resistance
+			-- ''
+		- Common Gate
+			-- Big voltage gain
+			-- Unity Current Gain -- [Current Buffer]
+			-- Infinite Input Resistance
+			-- 
+		- Common Drain (Source Follower)
+			-- Unity Voltage Gain -- [Voltage Buffer]
+			-- Infinite Current Gain
+			-- Infinite Input Resistance 
+			--
 
 *******************************************************************
 

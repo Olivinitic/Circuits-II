@@ -7,7 +7,7 @@ Week 5,6--MOS Large Signal Operation
 		4. NMOS/MOSFET
 		5. P-Channel/MOSFET
 		6. Current-Voltage Characteristics
-		7. Finit Output Resistance in Saturation
+		7. Finite Output Resistance in Saturation
 		8. MOSFET Circuits DC
 		9. Example 1
 		10. Example 2
@@ -15,6 +15,10 @@ Week 5,6--MOS Large Signal Operation
 		12. Example 4
 		13. Example 5
 		14. Example 6
+
+
+			- Triode to Saturation region crossover (point):
+				-- Vds = Vov
 *******************************************************************
 
 

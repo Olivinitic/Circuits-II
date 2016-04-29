@@ -20,6 +20,10 @@ Week 7,8--MOS LargeSignal Operation
 
 4. Small Signal Operation
 ====================================================================
+	Lecture Notes:
+		- Goal is to stay in the Saturation region
+			-- Otherwise, we will get distortion 
 
 5. T Equivalent Circuit Model
 ====================================================================
+	Lecture Notes:
